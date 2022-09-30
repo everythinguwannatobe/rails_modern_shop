@@ -14,7 +14,8 @@ gem "cssbundling-rails"
 gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "bootsnap", require: false
-# gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+gem "devise", branch: "rails_7", github: "DavidColby/devise"
+gem "name_of_person"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
@@ -40,3 +41,7 @@ group :test do
   gem "simplecov", "~> 0.21.2", require: false
   gem "capybara-screenshot"
 end
+
+# gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+
+gem "inline_svg", "~> 1.8"

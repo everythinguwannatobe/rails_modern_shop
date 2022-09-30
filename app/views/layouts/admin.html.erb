@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <title><%= t('admin_dashboard') %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+  <body class="profile bg-light">
+
+    <div class="admin container-fluid bg-light">
+      <div class="row flex-nowrap">
+
+        <%= render 'shared/navbar/admin_navbar' %>
+
+        <main class="main col pt-4">
+          <%= yield %>
+        </main>
+
+      </div>
+    </div>
+  </body>
+</html>

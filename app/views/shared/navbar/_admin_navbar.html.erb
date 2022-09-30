@@ -1,0 +1,44 @@
+<nav class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+  <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 text-white min-vh-100">
+    <div class="dropdown mb-1">
+      <a href="/" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle mb-1" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="d-none d-sm-inline mx-1 fw-700 ms-2 text-white">Admin Dashboard</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark fs-small shadow">
+        <li><%= link_to "Back to App", root_path, class: "dropdown-item" %>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Connect as...</a></li>
+      </ul>
+    </div>
+    <hr class="w-100" style="height:2px; color:grey;">
+    <ul class="ms-1 mt-1 nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+      <li class="nav-item">
+        <%= link_to root_path, class: "text-reset text-decoration-none" do %>
+          <%= inline_svg_tag 'home.svg', class: "icon" %>
+          <span class="ms-2 fw-600 d-none d-sm-inline">Home</span>
+        <% end %>
+      </li>
+    </ul>
+    <hr class="w-100" style="height:2px; color:grey;">
+    <div class="dropdown mb-3">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle me-1" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" /> </svg>
+        <span class="ms-2 fw-600 d-none d-sm-inline mx-1"><%= current_user.name %></span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark fs-small shadow">
+        <li><a class="dropdown-item" href="/admin/#">Settings</a></li>
+        <li><a class="dropdown-item" href="/#">Profile</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li>
+          <%= button_to t('logout_btn'), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

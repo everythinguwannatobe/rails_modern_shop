@@ -1,0 +1,18 @@
+<nav class="navbar bg-white shadow-sm">
+  <div class="container-fluid justify-content-between">
+
+    <!-- mobile menu -->
+
+    <!-- left menu -->
+    <%= render "shared/navbar/left_navbar_menu" %>
+
+    <!-- center logo -->
+    <div class="d-flex justify-content-center">
+      <%= link_to t('title'), root_path, class: "navbar-brand" %>
+    </div>
+
+    <!-- right menu -->
+    <%= render "shared/navbar/right_navbar_menu" %>
+
+  </div>
+</nav>

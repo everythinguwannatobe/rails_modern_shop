@@ -1,0 +1,9 @@
+en:
+  logout_btn: Logout
+  login_btn: Log in
+  create_account_btn: Create account
+  forgot_password_link: Forgot Password Link?
+  admin_dashboard: "Admin Dashboard | Rails Shop"
+  shared:
+    navbar:
+      title: Rails
