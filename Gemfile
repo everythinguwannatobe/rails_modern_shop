@@ -16,6 +16,7 @@ gem "redis", "~> 4.0"
 gem "bootsnap", require: false
 gem "devise", branch: "rails_7", github: "DavidColby/devise"
 gem "name_of_person"
+gem "pundit"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]

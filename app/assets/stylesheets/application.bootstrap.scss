@@ -5,11 +5,12 @@
 $theme-colors: (
         primary: #234d7b,
         secondary: #3b3c3e,
-        success: #1e6111,
+        success: #22c55e,
         info:  #64c3d2,
         warning: #f5e74a,
         danger: #820410,
         dark: #0f172a,
+        faint: #fff
 );
 
 @import 'bootstrap/scss/bootstrap';
