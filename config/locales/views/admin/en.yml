@@ -1,0 +1,9 @@
+en:
+  admin:
+    dashboard:
+      index:
+        title: Admin Dashboard
+        resource_title: Resources
+      resource_card:
+        account_title: Accounts
+        subtitle: Application users

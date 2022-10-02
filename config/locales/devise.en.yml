@@ -63,8 +63,8 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
-  login_btn: ""
-  create_account_btn: ""
-  forget_password_link: ""
-  admin_dashboard: ""
+  admin:
+    dashboard:
+      resource_card:
+        account_title: ""
 
