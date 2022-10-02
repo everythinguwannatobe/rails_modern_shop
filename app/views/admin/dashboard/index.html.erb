@@ -11,6 +11,7 @@
 
   <%= render partial: "resource_card", locals: {
           title: t('admin.dashboard.resource_card.account_title'),
-          subtitle: t('admin.dashboard.resource_card.subtitle') } %>
+          subtitle: t('admin.dashboard.resource_card.subtitle'),
+          resource_index: admin_users_path, resource_new: new_admin_user_path } %>
 
 </div>
