@@ -3,6 +3,16 @@
   width: 1.5rem;
 }
 
+.user-dashboard__icon-sm {
+  height: 1rem;
+  width: 1rem;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+}
+
 @font-face {
   font-family: "Baloo 2";
   src: url(asset-path('Baloo2-VariableFont_wght.ttf')) format("truetype");
@@ -36,4 +46,9 @@ h1, h2, h3 {
   color: black;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.admin-active {
+  background-color: lighten(#0f172a, 5%);
+  border-radius: 5px;
 }

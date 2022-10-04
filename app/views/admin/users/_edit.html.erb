@@ -1,0 +1,23 @@
+<%= form_with(model: [:admin, @user]) do |f| %>
+  <div class="form-group mb-3">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, value: @user.name, autofocus: true, autocomplete: "name", class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :email, class: "form-label" %>
+    <%= f.email_field :email, value: @user.email, autofocus: false, autocomplete: "email", class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <div class="d-flex flex-column col-4">
+      <%= f.label :role, class: "form-label" %>
+      <%= f.select(:role, [%w[Admin admin], %w[Customer customer]], value: @user.role, class: "form-select") %>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end form-group mb-3 pt-3">
+    <button class="btn btn-outline-secondary me-3" data-bs-dismiss="modal">Cancel</button>
+    <%= f.submit "Update", class: "btn btn-secondary me-3" %>
+  </div>
+<% end %>

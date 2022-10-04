@@ -3626,7 +3626,7 @@
   function setFormMode(mode) {
     session.setFormMode(mode);
   }
-  var Turbo = /* @__PURE__ */ Object.freeze({
+  var Turbo2 = /* @__PURE__ */ Object.freeze({
     __proto__: null,
     navigator: navigator$1,
     session,
@@ -4237,7 +4237,7 @@
       element = element.parentElement;
     }
   })();
-  window.Turbo = Turbo;
+  window.Turbo = Turbo2;
   start();
 
   // ../../node_modules/@hotwired/turbo-rails/app/javascript/turbo/cable.js
@@ -6225,8 +6225,56 @@
     }
   };
 
+  // controllers/modal_controller.js
+  var modal_controller_default = class extends Controller {
+    connect() {
+      this.modal = new bootstrap.Modal(this.element, {
+        keyboard: false
+      });
+      this.modal.show();
+    }
+    disconnect() {
+      this.modal.hide();
+    }
+  };
+
+  // controllers/turbo_controller.js
+  var turbo_controller_default = class extends Controller {
+    initialize() {
+      this.element.setAttribute("data-action", "click->turbo#click");
+    }
+    click(e) {
+      e.preventDefault();
+      this.url = this.element.getAttribute("href");
+      fetch(this.url, {
+        headers: {
+          Accept: "text/vnd.turbo-stream.html"
+        }
+      }).then((r) => r.text()).then((html) => Turbo.renderStreamMessage(html));
+    }
+  };
+
   // controllers/index.js
   application.register("hello", hello_controller_default);
+  application.register("modal", modal_controller_default);
+  application.register("turbo", turbo_controller_default);
+
+  // ../../node_modules/bootstrap/dist/js/bootstrap.esm.js
+  var bootstrap_esm_exports = {};
+  __export(bootstrap_esm_exports, {
+    Alert: () => Alert,
+    Button: () => Button,
+    Carousel: () => Carousel,
+    Collapse: () => Collapse,
+    Dropdown: () => Dropdown,
+    Modal: () => Modal,
+    Offcanvas: () => Offcanvas,
+    Popover: () => Popover,
+    ScrollSpy: () => ScrollSpy,
+    Tab: () => Tab,
+    Toast: () => Toast,
+    Tooltip: () => Tooltip
+  });
 
   // ../../node_modules/@popperjs/core/lib/index.js
   var lib_exports = {};
@@ -11421,6 +11469,9 @@
   };
   enableDismissTrigger(Toast);
   defineJQueryPlugin(Toast);
+
+  // application.js
+  window.bootstrap = bootstrap_esm_exports;
 })();
 /*!
   * Bootstrap v5.2.1 (https://getbootstrap.com/)

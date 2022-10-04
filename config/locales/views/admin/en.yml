@@ -7,3 +7,7 @@ en:
       resource_card:
         account_title: Accounts
         subtitle: Application users
+    users:
+      index:
+        title: Users
+

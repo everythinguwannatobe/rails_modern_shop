@@ -67,4 +67,16 @@ en:
     dashboard:
       resource_card:
         account_title: ""
+    users:
+      index:
+        title: ""
+  shared:
+    navbar:
+      admin_navbar:
+        back_to_app: ""
+        connect: ""
+        home_link: ""
+        users_link: ""
+        settings_link: ""
+        profile_link: ""
 

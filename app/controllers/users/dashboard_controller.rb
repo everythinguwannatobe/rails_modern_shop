@@ -1,21 +1,8 @@
 class Users::DashboardController < ApplicationController
-  before_action :authenticate_dashboard!
 
   layout "users"
 
   def show
-  end
-
-  protected
-
-  def authenticate_dashboard!
-    if !current_user
-      redirect_to users_account_show_path
-    elsif current_user.admin?
-      redirect_to admin_root_path
-    else
-      redirect_to users_root_path
-    end
   end
 
   private

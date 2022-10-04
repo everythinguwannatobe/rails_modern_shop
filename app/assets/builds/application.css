@@ -18231,6 +18231,16 @@ textarea.form-control-lg {
   width: 1.5rem;
 }
 
+.user-dashboard__icon-sm {
+  height: 1rem;
+  width: 1rem;
+}
+@media (max-width: 1024px) {
+  .user-dashboard__icon-sm {
+    display: none;
+  }
+}
+
 @font-face {
   font-family: "Baloo 2";
   src: url(asset-path("Baloo2-VariableFont_wght.ttf")) format("truetype");
@@ -18262,6 +18272,11 @@ h1, .h1, h2, .h2, h3, .h3 {
   color: black;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.admin-active {
+  background-color: #16213d;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=application.css.map */

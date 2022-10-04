@@ -1,0 +1,48 @@
+<div class="table-responsive">
+  <%= turbo_frame_tag "users" do %>
+    <table class="table table-bordered">
+      <thead class="" style="background-color: #eeeeee">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.each do |user| %>
+          <tr>
+            <td style="width: 50px">
+    <span class="d-inline-block text-truncate" style="max-width: 100px"
+          data-bs-toggle="tooltip" data-bs-placement="bottom" title="<%= user.id %>">
+      <%= user.id %>
+    </span>
+            </td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td class="text-capitalize"><%= user.role %></td>
+            <td>
+              <div class="d-flex justify-content-end">
+                <%= link_to admin_user_path(user), class: "btn btn-sm btn-faint border shadow-sm ms-1", aria: { label: "User details" } do %>
+                  <%= inline_svg_tag 'eye.svg', class: "user-dashboard__icon-sm me-1" %>
+                  Show
+                <% end %>
+                <%= link_to edit_admin_user_path(user), "data-controller": "turbo", class: "btn btn-sm btn-faint border shadow-sm ms-1" do %>
+                  <%= inline_svg_tag 'edit.svg', class: "user-dashboard__icon-sm me-1" %>
+                  Edit
+                <% end %>
+                <%= button_to admin_user_path(user), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } },
+                              class: "btn btn-sm btn-faint border shadow-sm ms-1" do %>
+                  <%= inline_svg_tag 'trash.svg', class: "user-dashboard__icon-sm me-1" %>
+                  Delete
+                <% end %>
+              </div>
+            </td>
+          </tr>
+
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

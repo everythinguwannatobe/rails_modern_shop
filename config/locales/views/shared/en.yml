@@ -1,0 +1,12 @@
+en:
+  shared:
+    navbar:
+      title: Rails
+      admin_navbar:
+        title: Admin Dashboard
+        back_to_app: Back to app
+        connect: Connect as...
+        home_link: Home
+        users_link: Users
+        settings_link: Settings
+        profile_link: Profile

@@ -1,9 +1,20 @@
 <ul class="d-flex justify-content-center align-items-center list-unstyled mb-0">
-  <li class="nav-item mx-3 d-none d-md-block">
-    <%= link_to users_root_path, class: "nav-link", aria: { label: "User's dashboard" } do %>
-      <%= inline_svg_tag 'user.svg', class: "icon" %>
+  <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <%= link_to "Admin", admin_root_path, class: "align-content-center nav-link" %>
     <% end %>
-  </li>
+    <li class="nav-item mx-3 d-none d-md-block">
+      <%= link_to users_root_path, class: "nav-link", aria: { label: "User's dashboard" } do %>
+        <%= inline_svg_tag 'user.svg', class: "icon" %>
+      <% end %>
+    </li>
+  <% else %>
+    <li class="nav-item mx-3 d-none d-md-block">
+      <%= link_to users_account_show_path, class: "nav-link", aria: { label: "User's dashboard" } do %>
+        <%= inline_svg_tag 'user.svg', class: "icon" %>
+      <% end %>
+    </li>
+  <% end %>
   <li class="nav-item mx-3 d-none d-md-block">
     <%= link_to root_path, class: "nav-link", aria: { label: "Search" } do %>
       <%= inline_svg_tag 'search.svg', class: "icon" %>
